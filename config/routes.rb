@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   
   root to: "home#index"
   get "/sobre", to: "sobre#index"
+  get "/produtos", to: "produtos#index"
 end

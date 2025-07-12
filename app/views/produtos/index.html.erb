@@ -1,0 +1,40 @@
+<div align="center">
+
+		<form action="/produto/incluir" method="post">
+
+			<table border="1" cellpadding="5">
+
+				<br />
+
+				<tr>
+					<th>Nome:</th>
+					<td><input type="text" name="nome" id="nome" size="45" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit"
+						value="Cadastrar" />
+				</tr>
+			</table>
+		</form>
+	</div>
+
+<hr>
+<div align="center">
+    <br />
+		<table border="1" cellpadding="5">
+            <tr>
+                <th>ID</th>
+				<th>Nome</th>
+                <th>Ações</th>
+            </tr>
+            <tbody>
+                <% @produtos.each do |produto| %>
+                 <tr>
+                    <td><%= produto.id %></td>
+                    <td><%= produto.nome %></td>
+                    <td><a href="/produtos/<%= produto.id %>">Editar</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/produtos/<%= produto.id %>">Excluir</a></td>
+                <% end %>
+            </tbody>          
+        </table>
+</div>
